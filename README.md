@@ -14,9 +14,9 @@ Demo test with Android Ebay app version 5.9.0 using Java.
 - Run `adb devices` to get list of devices.
 - Navigate to project dir, Run test with gradle:
 ```sh
- gradle -Dcucumber.options="--tags @search.search_with_guest_user --plugin pretty --plugin html:report" -DdeviceName="your_device_name" -Dapp="full_path_to_apk"
+ gradle cleanTest test -Dcucumber.options="--tags @search.search_with_guest_user" -DdeviceName="your_device_name" -Dapp="full_path_to_apk"
  Ex:
- gradle -Dcucumber.options="--tags @search.search_with_guest_user --plugin pretty --plugin html:report" -DdeviceName="192.168.56.101:5555" -Dapp="/Users/test/EbayUITestJava/apk/com.ebay.mobile_5.9.0.apk"
+ gradle cleanTest test -Dcucumber.options="--tags @search.search_with_guest_user" -DdeviceName="192.168.56.101:5555" -Dapp="/Users/test/EbayUITestJava/apk/com.ebay.mobile_5.9.0.apk"
 ```
 
 ### Report
@@ -33,3 +33,4 @@ Demo test with Android Ebay app version 5.9.0 using Java.
  ```
 - Method `List<ProductInfo> getListOfProductNamesAndPrices(int numberOfProduct)` will return list of N products from search result by swiping.
 - `ProductInfo` will override `equals` and `hashCode` methods to support getting unique element in `HashSet<ProductInfo>`
+
